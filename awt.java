@@ -11,7 +11,7 @@ import java.lang.*;
 import javax.swing.*;
 //  combine /home/shubham/Desktop/packer2/test
 
- // target  /home/shubham/Desktop/javap/demosssss
+ // target  /home/shubham/Desktop/javap/dem
 
 class writeobj implements Serializable
 {
@@ -65,7 +65,7 @@ class Images extends Frame implements Runnable{
 		});
         //fobj.setVisible(true);
         try{
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         }
         catch(Exception e){
             System.out.println("Error in  1 window");
@@ -326,7 +326,7 @@ class Frame5 extends Frame implements ActionListener
 			                      }
                     length=0;
                     filecontain="";
-                   
+                   int ch1;
                         while((ch=bread.read())>0)
                           {
                             length++;    
@@ -335,17 +335,18 @@ class Frame5 extends Frame implements ActionListener
                                  {
                                      String[] Header=filecontain.split(" ");
                                                    
-                                      filecontain="";
+                                     
                                       String name=dire+"/"+Header[0];      
                                       FileWriter fwrite=new FileWriter(name);
                                       BufferedWriter bwrite=new BufferedWriter(fwrite);
                                                   
                                       int j=Integer.parseInt(Header[1].trim());
-
+                                        filecontain="";
 			                          //byte[] buffer = new byte[1024];
                                       for(int i=0;i<j;i++)
                                       {
-                                          filecontain=filecontain+(char)(bread.read());
+                                        ch1 = bread.read();
+                                          filecontain=filecontain+(char)ch1;
                                        }
     
                                        bwrite.write(filecontain);
@@ -493,7 +494,7 @@ class MainWindow
         //Thread tobj = new Thread(i);
         //tobj.start();
         
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         
         
         //tobj.join();
